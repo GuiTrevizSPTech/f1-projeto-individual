@@ -1,0 +1,81 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+    border: 1px solid red;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+}
+
+.container ul {
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    gap: 12%;
+    list-style: none;
+
+}
+
+header .container ul li a {
+    color: red;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    gap: 12%;
+}
+
+.register a {
+    padding: 8px 12px;
+    color: white;
+    border-radius: 5px;
+}
+
+#cadastro {
+    background-color: red;
+}
+
+#acesso {
+    background-color: black;
+}
+
+/* Slogan */
+
+.main img{
+    width: 100%;
+    height: 88vh;
+    filter: brightness(60%);
+    object-fit: cover;
+    background-size: cover;
+}
