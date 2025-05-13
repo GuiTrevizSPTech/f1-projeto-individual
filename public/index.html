@@ -4,35 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
     <link rel="stylesheet" href="./styles/style.css">
+
+    <title>Document</title>
 </head>
 
 <body>
+    <header id="main-header" class="transparent">
+        <div class="container">
+            <div class="logo">
+                <h1>TRZ</h1>
+                <h2>Wheels</h2>
+            </div>
+            <ul>
+                <li><a href="">História</a></li>
+                <li><a href="">Linha do Tempo</a></li>
+                <li><a href="">Comparações</a></li>
+                <li><a href="">Quiz Wheels</a></li>
+            </ul>
+            <div class="register">
+                <a href="./cadastro.html" id="cadastro">Sign In</a>
+                <a href="./login.html" id="acesso">Log In</a>
+            </div>
+        </div>
+    </header>
+
     <section class="main">
         <div class="container">
-            <header>
-
-                <div class="logo">
-                    <h1>TRZ</h1>
-                    <h2>Wheels</h2>
-                </div>
-                <ul>
-                    <li><a href="">História</a></li>
-                    <li><a href="">Linha do Tempo</a></li>
-                    <li><a href="">Comparações</a></li>
-                    <li><a href="">Quiz Wheels</a></li>
-                </ul>
-                <div class="register">
-                    <a href="./cadastro.html" id="cadastro">Sign In</a>
-                    <a href="./login.html" id="acesso">Log In</a>
-                </div>
-
-            </header>
-
-
-
             <div class="slogan">
                 <h2>Na <span>Fórmula 1</span>, não vence quem corre:</h2>
                 <h2>vence quem voa <span>rasgando o impossível.</span></h2>
@@ -40,6 +39,54 @@
             <a href="#">Conheça as Máquinas</a>
         </div>
     </section>
+
+    <section class="conteudo-extra">
+        <div class="container">
+            <h2>Conteúdo adicional abaixo do slogan</h2>
+            <p>Você pode colocar aqui textos, imagens ou cards sobre carros de F1, pilotos, estatísticas etc.</p>
+        </div>
+    </section>
+
+    <div class="timeline">
+    
+        <div class="decade">
+          <h2>🏁 1950s – O Nascimento da Fórmula 1</h2>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Ferrari_500_F2_1952.jpg" alt="Ferrari 500 F2 - 1952" class="f1-image" />
+          <p><strong>Resumo:</strong> Motores grandes, poucos recursos aerodinâmicos e início da paixão mundial pelo automobilismo.</p>
+          <button onclick="mostrarDetalhes(this)">Ver mais</button>
+          <div class="details hidden">
+            <p><strong>Motor:</strong> 2.0L aspirado – cerca de 185 hp</p>
+            <p><strong>Chassi:</strong> Estrutura tubular simples</p>
+            <p><strong>Curiosidade:</strong> A Ferrari dominou a década com o modelo 500 F2, que foi campeão em 1952 e 1953 com Alberto Ascari.</p>
+          </div>
+        </div>
+    
+        <div class="decade">
+          <h2>🚀 1970s – Aerodinâmica Revoluciona</h2>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Lotus_79_2008.jpg" alt="Lotus 79 - 1978" class="f1-image" />
+          <p><strong>Resumo:</strong> Efeito solo, asas e foco crescente em estabilidade e segurança.</p>
+          <button onclick="mostrarDetalhes(this)">Ver mais</button>
+          <div class="details hidden">
+            <p><strong>Motor:</strong> Ford-Cosworth DFV V8 – cerca de 500 hp</p>
+            <p><strong>Inovação:</strong> Introdução do efeito solo com o revolucionário Lotus 79</p>
+            <p><strong>Curiosidade:</strong> O Lotus 79 foi tão dominante que forçou a concorrência a redesenhar todos os seus carros em 1979.</p>
+          </div>
+        </div>
+    
+        <div class="decade">
+          <h2>💻 2000s – Eletrônica e Domínio de Construtores</h2>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Michael_Schumacher_2004_Canada.jpg" alt="Ferrari F2004 - Schumacher" class="f1-image" />
+          <p><strong>Resumo:</strong> Telemetria, câmbio semiautomático, controle de tração e Ferrari dominante com Schumacher.</p>
+          <button onclick="mostrarDetalhes(this)">Ver mais</button>
+          <div class="details hidden">
+            <p><strong>Motor:</strong> V10 3.0L – até 900 hp</p>
+            <p><strong>Tecnologia:</strong> Sistemas eletrônicos avançados, sensores e controle de tração</p>
+            <p><strong>Curiosidade:</strong> O F2004 venceu 15 das 18 corridas de 2004 e é um dos carros mais bem-sucedidos da história.</p>
+          </div>
+        </div>
+    
+      </div>
+    <script src="./javascripts/script.js"></script>
 </body>
 
 </html>

@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
-
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
+body,
+html {
+    font-family: sans-serif;
 }
 
 .container {
@@ -15,97 +14,205 @@ a {
     width: 80%;
 }
 
-/* Header */
-
 header {
+    height: 12vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 12vh;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.226);
+    left: 0;
+    
+    z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
-header .container .logo {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    width: 15%;
+header.transparent {
+    background-color: transparent;
 }
 
-.logo h1,h2 {
-    font-family: "Racing Sans One", sans-serif;
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
 }
 
-.container ul {
-    display: flex;
-    justify-content: center;
-    width: 35%;
-    gap: 12%;
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
+
+.logo h1{
+    color: rgb(175, 6, 6);
+    font-size: 2.5rem;
+}
+
+.logo h2 {
+    color: white;
+}
+
+ul {
     list-style: none;
-
-}
-
-header .container ul li a {
-    color: red;
-}
-
-.register {
     display: flex;
-    justify-content: center;
-    width: 15%;
-    gap: 12%;
+    gap: 1.5rem;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: color 0.1s ease-in-out;
+}
+
+header ul li a:hover {
+    color: rgb(175, 6, 6);
 }
 
 .register a {
-    padding: 8px 12px;
+    margin-left: 1rem;
+    text-decoration: none;
     color: white;
-    border-radius: 5px;
+    font-size: 1.1rem;
+    padding: 8px 12px;
+    border-radius: 4px;
 }
 
 #cadastro {
-    background-color: red;
+    color: black;
+    background-color: white;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#cadastro:hover {
+    background-color: rgb(175, 6, 6);
+    color: white;
 }
 
 #acesso {
-    background-color: black;
+    background-color: rgb(175, 6, 6);
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-/* Slogan */
+#acesso:hover {
+    color: black;
+    background-color: white;
+}
 
-.main{
-    display: flex;
-
-    background: linear-gradient(#0000007d, #0000007d), url("../assets/f1-ferrari-qlt.jpg");
-    width: 100vw;
+.main {
     height: 100vh;
-    background-position: center;
-    
-    object-fit: cover;
+    background: linear-gradient(#0000007d, #0000007d), url('../assets/f1-ferrari-qlt.jpg');
     background-size: cover;
-    
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
 }
 
-.main .container {
+.slogan {
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
 }
 
 .slogan h2 {
-    font-size: 48px;
+    font-size: 2.5rem;
+    line-height: 1.4;
+}
+
+.slogan span {
+    color: rgb(175, 6, 6);
+}
+
+.main a {
+    text-decoration: none;
     color: white;
-
+    background-color: rgb(175, 6, 6);
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 1rem 1.5rem;
 }
 
-.slogan h2 span {
-    color: red;
+.conteudo-extra {
+    height: 70vh;
+    background-color: #f2f2f2;
+    color: #111;
+    padding: 2rem;
 }
+
+/* TESTE */
+
+
+.timeline {
+  max-width: 900px;
+  margin: auto;
+}
+
+.decade {
+  margin-bottom: 40px;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-left: 5px solid crimson;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  transition: transform 0.3s ease;
+  
+}
+
+.decade:hover {
+    transform: translateX(10px);
+}
+
+.decade h2 {
+  color: crimson;
+}
+
+.f1-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+button {
+  background-color: crimson;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #b30000;
+}
+
+.details.hidden {
+  display: none;
+}
+
+.details {
+  margin-top: 15px;
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 5px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+  
