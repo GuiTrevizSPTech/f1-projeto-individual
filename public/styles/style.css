@@ -219,4 +219,10 @@ button:hover {
   from {opacity: 0;}
   to {opacity: 1;}
 }
+
+.caracteristicas {
+    display: flex;
+    flex-direction: column;
+    list-style: circle;
+}
   
