@@ -2,92 +2,215 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="./assets/TRZWheels_logo.jpg">
-    <link rel="stylesheet" href="./styles/style.css">
+  <link rel="shortcut icon" href="./assets/TRZWheels_logo.jpg">
+  <link rel="stylesheet" href="./styles/style.css">
 
-    <title>TRZ Wheels - Máquinas da Fórmula 1</title>
+  <title>TRZ Wheels - Máquinas da Fórmula 1</title>
 </head>
 
 <body>
-    <header id="main-header" class="transparente">
-        <div class="container">
-            <div class="logo">
-                <h1>TRZ</h1>
-                <h2>Wheels</h2>
-            </div>
-            <ul>
-                <li><a href="">História</a></li>
-                <li><a href="">Linha do Tempo</a></li>
-                <li><a href="">Comparações</a></li>
-                <li><a href="">Quiz Wheels</a></li>
-            </ul>
-            <div class="register">
-                <a href="./cadastro.html" id="cadastro">Sign In</a>
-                <a href="./login.html" id="acesso">Log In</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="main">
-        <div class="container">
-            <div class="slogan">
-                <h2>Na <span>Fórmula 1</span>, não vence quem corre:</h2>
-                <h2>vence quem voa <span>rasgando o impossível.</span></h2>
-            </div>
-            <a href="#">Conheça as Máquinas</a>
-        </div>
-    </section>
-
-    <section class="conteudo-extra">
-        <div class="container">
-            <h2>Conteúdo adicional abaixo do slogan</h2>
-            <p>Você pode colocar aqui textos, imagens ou cards sobre carros de F1, pilotos, estatísticas etc.</p>
-        </div>
-    </section>
-
-    <div class="timeline">
-    
-        <div class="decade">
-          <h2>🏁 1950s – O Nascimento da Fórmula 1</h2>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Ferrari_500_F2_1952.jpg" alt="Ferrari 500 F2 - 1952" class="f1-image" />
-          <p><strong>Resumo:</strong> Motores grandes, poucos recursos aerodinâmicos e início da paixão mundial pelo automobilismo.</p>
-          <button onclick="mostrarDetalhes(this)">Ver mais</button>
-          <div class="divDetalhe hidden">
-            <p><strong>Motor:</strong> 2.0L aspirado – cerca de 185 hp</p>
-            <p><strong>Chassi:</strong> Estrutura tubular simples</p>
-            <p><strong>Curiosidade:</strong> A Ferrari dominou a década com o modelo 500 F2, que foi campeão em 1952 e 1953 com Alberto Ascari.</p>
-          </div>
-        </div>
-    
-        <div class="decade">
-          <h2>🚀 1970s – Aerodinâmica Revoluciona</h2>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Lotus_79_2008.jpg" alt="Lotus 79 - 1978" class="f1-image" />
-          <p><strong>Resumo:</strong> Efeito solo, asas e foco crescente em estabilidade e segurança.</p>
-          <button onclick="mostrarDetalhes(this)">Ver mais</button>
-          <div class="divDetalhe hidden">
-            <p><strong>Motor:</strong> Ford-Cosworth DFV V8 – cerca de 500 hp</p>
-            <p><strong>Inovação:</strong> Introdução do efeito solo com o revolucionário Lotus 79</p>
-            <p><strong>Curiosidade:</strong> O Lotus 79 foi tão dominante que forçou a concorrência a redesenhar todos os seus carros em 1979.</p>
-          </div>
-        </div>
-    
-        <div class="decade">
-          <h2>💻 2000s – Eletrônica e Domínio de Construtores</h2>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Michael_Schumacher_2004_Canada.jpg" alt="Ferrari F2004 - Schumacher" class="f1-image" />
-          <p><strong>Resumo:</strong> Telemetria, câmbio semiautomático, controle de tração e Ferrari dominante com Schumacher.</p>
-          <button onclick="mostrarDetalhes(this)">Ver mais</button>
-          <div class="divDetalhe hidden">
-            <p><strong>Motor:</strong> V10 3.0L – até 900 hp</p>
-            <p><strong>Tecnologia:</strong> Sistemas eletrônicos avançados, sensores e controle de tração</p>
-            <p><strong>Curiosidade:</strong> O F2004 venceu 15 das 18 corridas de 2004 e é um dos carros mais bem-sucedidos da história.</p>
-          </div>
-        </div>
-    
+  <header id="main-header" class="transparente">
+    <div class="container">
+      <div class="logo">
+        <h1>TRZ</h1>
+        <h2>Wheels</h2>
       </div>
-    <script src="./javascripts/script.js"></script>
+      <ul>
+        <li><a href="#historia">História</a></li>
+        <li><a href="#timeline">Linha do Tempo</a></li>
+        <li><a href="">Comparações</a></li>
+        <li><a href="">Quiz Wheels</a></li>
+      </ul>
+      <div class="register">
+        <a href="./cadastro.html" id="cadastro">Sign In</a>
+        <a href="./login.html" id="acesso">Log In</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="main">
+    <div class="container">
+      <div class="slogan">
+        <h2>Na <span>Fórmula 1</span>, não vence quem corre:</h2>
+        <h2>vence quem voa <span>rasgando o impossível.</span></h2>
+      </div>
+      <a href="#">Conheça as Máquinas</a>
+    </div>
+  </section>
+
+  <section class="conteudo-extra" id="historia">
+    <div class="container">
+      <h2>Conteúdo adicional abaixo do slogan</h2>
+      <p>Você pode colocar aqui textos, imagens ou cards sobre carros de F1, pilotos, estatísticas etc.</p>
+    </div>
+  </section>
+
+  <div class="timeline" id="timeline">
+
+    <div class="decade">
+      <h2>🏁 1950s – O nascimento da velocidade bruta</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Ferrari_500_F2_1952.jpg" alt="Ferrari 500 F2 - 1952"
+        class="f1-image" />
+      <p><strong>Resumo:</strong> Motores grandes, poucos recursos aerodinâmicos e início da paixão mundial pelo
+        automobilismo.</p>
+      <button onclick="mostrarDetalhes(this)">Ver mais</button>
+      <div class="divDetalhe hidden">
+        <p><strong>Motor:</strong> 2.0L aspirado – cerca de 185 hp</p>
+        <p><strong>Chassi:</strong> Estrutura tubular simples</p>
+        <p><strong>Curiosidade:</strong> A Ferrari dominou a década com o modelo 500 F2, que foi campeão em 1952 e 1953
+          com Alberto Ascari.</p>
+      </div>
+    </div>
+
+    <div class="decade">
+      <h2>🏁 1960s – A revolução do motor traseiro</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Ferrari_500_F2_1952.jpg" alt="Ferrari 500 F2 - 1952"
+        class="f1-image" />
+      <p><strong>Resumo:</strong> Motores grandes, poucos recursos aerodinâmicos e início da paixão mundial pelo
+        automobilismo.</p>
+      <button onclick="mostrarDetalhes(this)">Ver mais</button>
+      <div class="divDetalhe hidden">
+        <p><strong>Motor:</strong> 2.0L aspirado – cerca de 185 hp</p>
+        <p><strong>Chassi:</strong> Estrutura tubular simples</p>
+        <p><strong>Curiosidade:</strong> A Ferrari dominou a década com o modelo 500 F2, que foi campeão em 1952 e 1953
+          com Alberto Ascari.</p>
+      </div>
+    </div>
+
+    <div class="decade">
+      <h2>🏁 1970s – A era da aerodinâmica e da criatividade</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Ferrari_500_F2_1952.jpg" alt="Ferrari 500 F2 - 1952"
+        class="f1-image" />
+      <p><strong>Resumo:</strong> Motores grandes, poucos recursos aerodinâmicos e início da paixão mundial pelo
+        automobilismo.</p>
+      <button onclick="mostrarDetalhes(this)">Ver mais</button>
+      <div class="divDetalhe hidden">
+        <p><strong>Motor:</strong> 2.0L aspirado – cerca de 185 hp</p>
+        <p><strong>Chassi:</strong> Estrutura tubular simples</p>
+        <p><strong>Curiosidade:</strong> A Ferrari dominou a década com o modelo 500 F2, que foi campeão em 1952 e 1953
+          com Alberto Ascari.</p>
+      </div>
+    </div>
+
+    <div class="decade">
+      <h2>🏁 1980s – O poder do turbo e o limite da engenharia</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Ferrari_500_F2_1952.jpg" alt="Ferrari 500 F2 - 1952"
+        class="f1-image" />
+      <p><strong>Resumo:</strong> Motores grandes, poucos recursos aerodinâmicos e início da paixão mundial pelo
+        automobilismo.</p>
+      <button onclick="mostrarDetalhes(this)">Ver mais</button>
+      <div class="divDetalhe hidden">
+        <p><strong>Motor:</strong> 2.0L aspirado – cerca de 185 hp</p>
+        <p><strong>Chassi:</strong> Estrutura tubular simples</p>
+        <p><strong>Curiosidade:</strong> A Ferrari dominou a década com o modelo 500 F2, que foi campeão em 1952 e 1953
+          com Alberto Ascari.</p>
+      </div>
+    </div>
+
+    <div class="decade">
+      <h2>🏁 1990s – A inteligência dominando a força</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Ferrari_500_F2_1952.jpg" alt="Ferrari 500 F2 - 1952"
+        class="f1-image" />
+      <p><strong>Resumo:</strong> Motores grandes, poucos recursos aerodinâmicos e início da paixão mundial pelo
+        automobilismo.</p>
+      <button onclick="mostrarDetalhes(this)">Ver mais</button>
+      <div class="divDetalhe hidden">
+        <p><strong>Motor:</strong> 2.0L aspirado – cerca de 185 hp</p>
+        <p><strong>Chassi:</strong> Estrutura tubular simples</p>
+        <p><strong>Curiosidade:</strong> A Ferrari dominou a década com o modelo 500 F2, que foi campeão em 1952 e 1953
+          com Alberto Ascari.</p>
+      </div>
+    </div>
+
+    <div class="decade">
+      <h2>🏁 2000s – A era da precisão cirúrgica</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Ferrari_500_F2_1952.jpg" alt="Ferrari 500 F2 - 1952"
+        class="f1-image" />
+      <p><strong>Resumo:</strong> Motores grandes, poucos recursos aerodinâmicos e início da paixão mundial pelo
+        automobilismo.</p>
+      <button onclick="mostrarDetalhes(this)">Ver mais</button>
+      <div class="divDetalhe hidden">
+        <p><strong>Motor:</strong> 2.0L aspirado – cerca de 185 hp</p>
+        <p><strong>Chassi:</strong> Estrutura tubular simples</p>
+        <p><strong>Curiosidade:</strong> A Ferrari dominou a década com o modelo 500 F2, que foi campeão em 1952 e 1953
+          com Alberto Ascari.</p>
+      </div>
+    </div>
+
+    <div class="decade">
+      <h2>🚀 2010s – A era híbrida e a inteligência artificial</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Lotus_79_2008.jpg" alt="Lotus 79 - 1978"
+        class="f1-image" />
+      <p><strong>Resumo:</strong> Efeito solo, asas e foco crescente em estabilidade e segurança.</p>
+      <button onclick="mostrarDetalhes(this)">Ver mais</button>
+      <div class="divDetalhe hidden">
+        <p><strong>Motor:</strong> Ford-Cosworth DFV V8 – cerca de 500 hp</p>
+        <p><strong>Inovação:</strong> Introdução do efeito solo com o revolucionário Lotus 79</p>
+        <p><strong>Curiosidade:</strong> O Lotus 79 foi tão dominante que forçou a concorrência a redesenhar todos os
+          seus carros em 1979.</p>
+      </div>
+    </div>
+
+    <div class="decade">
+      <h2>💻 2020s – A nova era da eficiência extrema</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Michael_Schumacher_2004_Canada.jpg"
+        alt="Ferrari F2004 - Schumacher" class="f1-image" />
+      <p><strong>Resumo:</strong> Telemetria, câmbio semiautomático, controle de tração e Ferrari dominante com
+        Schumacher.</p>
+      <button onclick="mostrarDetalhes(this)">Ver mais</button>
+      <div class="divDetalhe hidden">
+        <p><strong>Motor:</strong> V10 3.0L – até 900 hp</p>
+        <p><strong>Tecnologia:</strong> Sistemas eletrônicos avançados, sensores e controle de tração</p>
+        <p><strong>Curiosidade:</strong> O F2004 venceu 15 das 18 corridas de 2004 e é um dos carros mais bem-sucedidos
+          da história.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="frase-continuacao">
+        <h2>E a corrida continua: a cada milésimo de segundo, o futuro das máquinas de corrida é reescrito.</h2>
+      </div>
+      <div class="conteudo-footer">
+        <div class="logo">
+          <h1>TRZ</h1>
+          <h2>Wheels</h2>
+        </div>
+        <div class="copyright">
+          <h3>Feito por Guilherme Trevizan - SPTech &copy; 2025</h3>
+        </div>
+        <div class="social-media">
+          <!-- Github -->
+          <svg class="social-github" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 496 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+          </svg>
+
+          <!-- Instagram -->
+          <svg class="social-instagram" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+          </svg>
+
+          <!-- LinkedIn -->
+          <svg class="social-linkedin" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./javascripts/script.js"></script>
 </body>
 
 </html>
