@@ -224,5 +224,12 @@ button:hover {
     display: flex;
     flex-direction: column;
     list-style: circle;
+    line-height: 1;
 }
-  
+ 
+.curiosidades {
+    display: flex;
+    flex-direction: column;
+    list-style: circle;
+    line-height: 1;
+}
