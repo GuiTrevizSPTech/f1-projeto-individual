@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-cadastro {
+    height: 100vh;
+    background: linear-gradient(#0000007d, #0000007d), url('../assets/bg_tela_cadastro.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

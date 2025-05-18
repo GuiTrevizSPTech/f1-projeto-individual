@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-red-color: rgb(230, 0, 0);
+}
+
 body,
 html {
     font-family: sans-serif;
@@ -35,11 +39,11 @@ header .container {
 
 }
 
-header.transparent {
+header.transparente {
     background-color: transparent;
 }
 
-header.scrolled {
+header.abaixo {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
 }
@@ -53,7 +57,7 @@ header.scrolled {
 }
 
 .logo h1{
-    color: rgb(175, 6, 6);
+    color: var(--primary-red-color);
     font-size: 2.5rem;
 }
 
@@ -75,7 +79,7 @@ ul li a {
 }
 
 header ul li a:hover {
-    color: rgb(175, 6, 6);
+    color: var(--primary-red-color);
 }
 
 .register a {
@@ -94,12 +98,12 @@ header ul li a:hover {
 }
 
 #cadastro:hover {
-    background-color: rgb(175, 6, 6);
+    background-color: var(--primary-red-color);
     color: white;
 }
 
 #acesso {
-    background-color: rgb(175, 6, 6);
+    background-color: var(--primary-red-color);
     transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
@@ -131,13 +135,13 @@ header ul li a:hover {
 }
 
 .slogan span {
-    color: rgb(175, 6, 6);
+    color: var(--primary-red-color);
 }
 
 .main a {
     text-decoration: none;
     color: white;
-    background-color: rgb(175, 6, 6);
+    background-color: var(--primary-red-color);
     border-radius: 5px;
     font-size: 20px;
     padding: 1rem 1.5rem;
@@ -199,13 +203,13 @@ button:hover {
   background-color: #b30000;
 }
 
-.details.hidden {
+.divDetalhe.hidden {
   display: none;
 }
 
-.details {
+.divDetalhe {
   margin-top: 15px;
-  background-color: #2a2a2a;
+  background-color: #bb1919;
   padding: 15px;
   border-radius: 5px;
   animation: fadeIn 0.4s ease-in-out;

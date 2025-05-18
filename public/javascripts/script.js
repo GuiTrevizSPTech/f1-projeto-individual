@@ -1,16 +1,16 @@
 window.addEventListener('scroll', function () {
     const header = document.getElementById('main-header');
     if (window.scrollY > 10) {
-        header.classList.remove('transparent');
-        header.classList.add('scrolled');
+        header.classList.remove('transparente');
+        header.classList.add('abaixo');
     } else {
-        header.classList.remove('scrolled');
-        header.classList.add('transparent');
+        header.classList.remove('abaixo');
+        header.classList.add('transparente');
     }
 });
 
 function mostrarDetalhes(btn) {
-    const detalhe = btn.nextElementSibling;
-    detalhe.classList.toggle("hidden");
-    btn.textContent = detalhe.classList.contains("hidden") ? "Ver mais" : "Ver menos";
+    const divDetalhe = btn.nextElementSibling;
+    divDetalhe.classList.toggle("hidden");
+    btn.textContent = divDetalhe.classList.contains("hidden") ? "Ver mais" : "Ver menos";
 }
