@@ -65,4 +65,8 @@ insert into marca(nome) values
 ('Racing Bull'),
 ('Alpine');
 
-select * from marca;
+select * from marca order by 1;
+select * from usuario;
+
+select u.nome, u.email, m.nome 'Marca Favorita' from usuario u
+inner join marca m on u.fk_marca_favorita = m.id;
