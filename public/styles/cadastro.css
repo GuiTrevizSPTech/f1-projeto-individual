@@ -4,10 +4,23 @@
     box-sizing: border-box;
 }
 
-.bg-cadastro {
+.background-cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    background: linear-gradient(#0000007d, #0000007d), url('../assets/bg_tela_cadastro.jpg');
+    background: linear-gradient(#0000007d, #0000007d), url('../assets/f1-ferrari-login.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.cadastro {
+    background-color: linear-gradient(rgb(255,255,255,0.5));
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
