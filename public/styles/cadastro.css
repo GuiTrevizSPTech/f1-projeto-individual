@@ -85,6 +85,10 @@ select {
 
 /* ERROS */
 
+#div_erros_login {
+  display: none
+}
+
 .alerta_erro{
   display: flex;
   justify-content: flex-end;
@@ -106,3 +110,16 @@ select {
   font-weight: 500;
   font-size: 20px;
 }
+
+/* Loading cadastro */
+
+.loading-div {
+  width: 50px;
+  display: none;
+}
+
+.loading-div img {  
+  height: 50px;
+  width: 50px;
+}
+

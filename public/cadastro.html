@@ -173,12 +173,12 @@
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+        "<p>Você precisa preencher os campos corretamente para se cadastrar!</p>";
 
       finalizarAguardar();
       return false;
     } else {
-      setInterval(sumirMensagem, 5000);
+      setInterval(sumirMensagem(), 5000);
     }
 
     // Verificando se o código de ativação é de alguma empresa cadastrada
@@ -216,7 +216,7 @@
           cardErro.style.display = "block";
 
           mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+            "<p>Cadastro realizado com sucesso! Redirecionando para tela de Login...</p>";
 
           setTimeout(() => {
             window.location = "login.html";
