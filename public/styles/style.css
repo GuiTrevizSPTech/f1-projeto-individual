@@ -27,7 +27,7 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    
+
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
@@ -56,7 +56,7 @@ header.abaixo {
     transform: scale(1.2);
 }
 
-.logo h1{
+.logo h1 {
     color: var(--primary-red-color);
     font-size: 2.5rem;
 }
@@ -158,66 +158,73 @@ header ul li a:hover {
 
 
 .timeline {
-  max-width: 900px;
-  margin: auto;
+    padding: 60px 0;
+    max-width: 900px;
+    margin: auto;
 }
 
 .decade {
-  margin-bottom: 40px;
-  background-color: #1c1c1c;
-  padding: 20px;
-  border-left: 5px solid crimson;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #000;
-  transition: transform 0.3s ease;
-  
+    margin-bottom: 40px;
+    background-color: #1c1c1c;
+    padding: 50px;
+    border-left: 5px solid crimson;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    transition: transform 0.3s ease;
+    color: white;
+
 }
 
 .decade:hover {
-    transform: translateX(10px);
+    transform: translateX(15px);
 }
 
 .decade h2 {
-  color: crimson;
+    color: crimson;
 }
 
 .f1-image {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin: 15px 0;
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 15px 0;
 }
 
 button {
-  background-color: crimson;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
+    background-color: crimson;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
-  background-color: #b30000;
+    background-color: #b30000;
 }
 
 .divDetalhe.hidden {
-  display: none;
+    display: none;
 }
 
 .divDetalhe {
-  margin-top: 15px;
-  background-color: #bb1919;
-  padding: 15px;
-  border-radius: 5px;
-  animation: fadeIn 0.4s ease-in-out;
+    margin-top: 15px;
+    background-color: #bb1919;
+    padding: 50px 70px;
+    border-radius: 5px;
+    animation: fadeIn 0.4s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .caracteristicas {
@@ -226,10 +233,56 @@ button:hover {
     list-style: circle;
     line-height: 1;
 }
- 
+
 .curiosidades {
     display: flex;
     flex-direction: column;
     list-style: circle;
     line-height: 1;
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--primary-red-color);
+}
+
+.frase-continuacao {
+    padding: 32px 0;
+    text-align: center;
+}
+
+.conteudo-footer {
+    padding: 32px 0;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.conteudo-footer .logo h1 {
+    color: #000;
+}
+
+.social-media {
+    display: flex;
+    gap: 24px;
+}
+
+.social-media svg {
+    height: 45px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-media svg:hover {
+    transform: scale(1.1);
+}
+
+.copyright span {
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+
+.copyright span:hover {
+    color: white;
 }
