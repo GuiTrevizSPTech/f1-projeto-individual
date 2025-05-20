@@ -40,57 +40,59 @@
   </header>
   <!--header fim-->
   <div class="background-cadastro">
-    <div class="cadastro>
-      <div class=" alerta_erro">
-      <div class="card_erro" id="cardErro">
-        <span id="mensagem_erro"></span>
+    <div class="cadastro">
+      <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+          <span id="mensagem_erro"></span>
+        </div>
       </div>
     </div>
-    <div class="container">
-      <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
-        <div class="formulario">
-          <div class="campo">
-            <span>Nome:</span>
-            <input id="ipt_nome" type="text" placeholder="Seu nome" />
-          </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="ipt_email" type="text" placeholder="meuemail@provedor.com" />
-          </div>
-          <div class="campo">
-            <span>Senha:</span>
-            <input id="ipt_senha" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
-            <span>Confirmação da Senha:</span>
-            <input id="ipt_confirmacao_senha" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
-            <span>Qual sua marca da F1 favorita?</span>
-            <select id="select_marca_favorita">
-              <option value="#">Selecione uma Marca</option>
-              <option value="1">Ferrari</option>
-              <option value="2">Mclaren</option>
-              <option value="3">Mercedes Benz</option>
-              <option value="4">Haas</option>
-              <option value="5">Kick Sauber</option>
-              <option value="6">Red Bull</option>
-              <option value="7">Aston Martin</option>
-              <option value="8">Willians</option>
-              <option value="9">Racing Bull</option>
-              <option value="10">Alpine</option>
-            </select>
-          </div>
-          <button class="botao" onclick="cadastrar()">Cadastrar</button>
+  </div>
+  <div class="container">
+    <div class="card card-cadastro">
+      <h2>Bem-vindo!</h2>
+      <div class="formulario">
+        <div class="campo">
+          <span>Nome:</span>
+          <input id="ipt_nome" type="text" placeholder="Seu nome" />
         </div>
-        <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
+        <div class="campo">
+          <span>E-mail:</span>
+          <input id="ipt_email" type="text" placeholder="meuemail@provedor.com" />
         </div>
+        <div class="campo">
+          <span>Senha:</span>
+          <input id="ipt_senha" type="password" placeholder="******" />
+        </div>
+        <div class="campo">
+          <span>Confirmação da Senha:</span>
+          <input id="ipt_confirmacao_senha" type="password" placeholder="******" />
+        </div>
+        <div class="campo">
+          <span>Qual sua marca da F1 favorita?</span>
+          <select id="select_marca_favorita">
+            <option value="#">Selecione uma Marca</option>
+            <option value="1">Ferrari</option>
+            <option value="2">Mclaren</option>
+            <option value="3">Mercedes Benz</option>
+            <option value="4">Haas</option>
+            <option value="5">Kick Sauber</option>
+            <option value="6">Red Bull</option>
+            <option value="7">Aston Martin</option>
+            <option value="8">Willians</option>
+            <option value="9">Racing Bull</option>
+            <option value="10">Alpine</option>
+          </select>
+        </div>
+        <button class="botao" onclick="cadastrar()">Cadastrar</button>
+      </div>
+      <div id="div_aguardar" class="loading-div">
+        <img src="./assets/circle-loading.gif" id="loading-gif" />
+      </div>
 
-        <div id="div_erros_login"></div>
-      </div>
+      <div id="div_erros_login"></div>
     </div>
+
   </div>
 
 
