@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../styles/dashboards.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <title class=""></title>
 </head>
-<body>
+<body onload="obterDados()">
     <div class="header">
         <div class="logo">
             <h1>TRZ</h1>
@@ -22,16 +23,73 @@
         <svg class="logout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"/></svg>
     </div>
 
-    <div class="indicadores">
-        <div class="kpi">
+    <div class="dados">
+        <div class="indicadores">
+            <div class="kpi">
+                <h3> </h3>
+                <h4></h4>
+            </div>
+            <div class="kpi">
+                
+            </div>
+            <div class="kpi">
 
+            </div>
         </div>
-        <div class="kpi">
-
-        </div>
-        <div class="kpi">
-
+        <div class="graficos">
+            <div class="grafico">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="grafico">
+                <canvas id="myChart2"></canvas>
+            </div>
         </div>
     </div>
 </body>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const ctx2 = document.getElementById('myChart2');
+
+    new Chart(ctx2, {
+        type: 'pie',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+
+            }
+        }
+    });
+</script>
+
 </html>
