@@ -57,6 +57,7 @@
                             <span>Senha:</span>
                             <input id="ipt_campo" type="password" placeholder="******">
                         </div>
+                        
                     </div>
 
                     <button class="botao" onclick="entrar()">Entrar</button>
@@ -134,7 +135,7 @@
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Você precisa preencher os campos corretamento para poder ter acesso!";
             finalizarAguardar();
             return false;
         }
@@ -170,7 +171,7 @@
                     // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "./dashboard/dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

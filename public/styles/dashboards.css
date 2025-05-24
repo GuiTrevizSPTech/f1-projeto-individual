@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+.father-header {
+    background-color: rgb(24, 24, 24);
+    color: white;
+}
+
 .header {
     display: flex;
     justify-content: space-around;
@@ -42,6 +47,12 @@
     fill: #fff;
 }
 
+.dados {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 /* KPIs */
 
 .indicadores {
@@ -57,3 +68,19 @@
     border-radius: 15px;
     background-color: rgb(228, 228, 228);
 }
+
+/* GRÁFICOS */
+.graficos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.grafico {
+    background-color: rgb(228, 228, 228);
+    padding: 8px;
+    border-radius: 15px;
+    width: 35vw;
+}
+
+
