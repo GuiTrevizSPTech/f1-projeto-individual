@@ -55,7 +55,7 @@
                         </div>
                         <div class="campo">
                             <span>Senha:</span>
-                            <input id="ipt_campo" type="password" placeholder="******">
+                            <input id="ipt_senha" type="password" placeholder="******">
                         </div>
                         
                     </div>
@@ -128,7 +128,6 @@
 
 
     function entrar() {
-        aguardar();
 
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
@@ -168,7 +167,6 @@
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
                     sessionStorage.NOME_MARCA_FAVORITA = json.nome_marca;
-                    // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
                         window.location = "./dashboard/dashboard.html";
