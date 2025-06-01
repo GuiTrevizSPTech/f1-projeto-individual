@@ -65,15 +65,18 @@ function listarPerguntasAlternativas(req, res) {
 function corrigirRespostaQuiz(req, res) {
     const idQuiz = req.params.idQuiz;
     const respostasUsuario = req.body.respostas;
+    const idUsuario = req.body.idUsuario;
 
     quizModel.buscarRespostasCorretas(idQuiz)
         .then(respostasCertas => {
             let acertos = 0;
             let total = 0;
+            console.log("respostasCertas Model:", respostasCertas);
+
 
             // Contar total de alternativas corretas
             for (let i = 0; i < respostasCertas.length; i++) {
-                if (respostasCertas[i].correta) {
+                if (Number(respostasCertas[i].correto) == 1) {
                     total++;
                 }
             }
@@ -81,13 +84,16 @@ function corrigirRespostaQuiz(req, res) {
             // Comparar as respostas do usuário com as alternativas corretas
             for (let i = 0; i < respostasUsuario.length; i++) {
                 const respostaUsuario = respostasUsuario[i];
-
+                console.log("RespostasUsuario: ", respostaUsuario);
                 for (let j = 0; j < respostasCertas.length; j++) {
                     const alternativaCorreta = respostasCertas[j];
 
-                    if (respostaUsuario.idAlternativa == alternativaCorreta.id_alternativa &&
-                        alternativaCorreta.correta
+
+
+                    if (Number(respostaUsuario.idAlternativa) === Number(alternativaCorreta.id) &&
+                        Number(alternativaCorreta.correto) === 1
                     ) {
+                        console.log("ACERTOU a alternativa: ", respostaUsuario.idAlternativa);
                         acertos++;
                         break;
                     }
@@ -95,15 +101,25 @@ function corrigirRespostaQuiz(req, res) {
             }
 
             let porcentagem = 0;
+
             if (total > 0) {
-                porcentagem = ((acertos / total) * 100).toFixed(2);
+                porcentagem = Number(((acertos / total) * 100).toFixed(2));
             }
 
-            res.json({
-                acertos: acertos,
-                total: total,
-                porcentagem: porcentagem
-            });
+
+            // Salvar no banco
+            quizModel.salvarResultadoQuiz(idUsuario, idQuiz, acertos, total, porcentagem)
+                .then(() => {
+                    res.json({
+                        acertos: acertos,
+                        total: total,
+                        porcentagem: porcentagem
+                    });
+                })
+                .catch(erro => {
+                    console.error("Erro ao salvar resultado:", erro);
+                    res.status(500).json(erro);
+                });
         })
         .catch(erro => {
             console.error("Erro ao corrigir quiz:", erro);

@@ -42,8 +42,18 @@ function buscarRespostasCorretas(idQuiz) {
     return database.executar(instrucaoSql);
 }
 
+function salvarResultadoQuiz(idUsuario, idQuiz, acertos, total, porcentagem) {
+    console.log("ACESSEI O QUIZ MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function salvarResultadoQuiz(): ", idUsuario, idQuiz, acertos, total, porcentagem)
+    var instrucaoSql = `
+        INSERT INTO resultado_quiz (id_usuario, id_quiz, acertos, total, porcentagem)
+        VALUES (${idUsuario}, ${idQuiz}, ${acertos}, ${total}, ${porcentagem});
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 module.exports = {
     listarQuizzes,
     buscarQuizCompleto,
-    buscarRespostasCorretas
+    buscarRespostasCorretas,
+    salvarResultadoQuiz
 }

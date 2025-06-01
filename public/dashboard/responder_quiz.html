@@ -54,6 +54,7 @@
                         input.type = "radio";
                         input.name = `pergunta_${pergunta.id}`;
                         input.value = alternativa.id;
+                        input.className = "inputs-radio"
 
                         label.appendChild(input);
                         label.appendChild(document.createTextNode(" " + alternativa.texto));
@@ -71,26 +72,27 @@
 
     function enviarRespostas() {
         const urlParams = new URLSearchParams(window.location.search);
-        const idQuiz = urlParams.get("idQuiz");
-        const idUsuario = sessionStorage.ID_USUARIO;
+        const idQuiz = parseInt(urlParams.get("idQuiz"));
+        const idUsuario = parseInt(sessionStorage.ID_USUARIO);
 
         const respostas = [];
 
-        // Percorre todas as divs de perguntas
-        const perguntas = document.querySelectorAll(".pergunta");
-        for (let i = 0; i < perguntas.length; i++) {
-            const perguntaDiv = perguntas[i];
-            const radios = perguntaDiv.querySelectorAll("input[type=radio]");
+        const inputs = document.querySelectorAll(".inputs-radio");
+        console.log("selecionei a const perguntas: ", inputs);
 
-            for (let j = 0; j < radios.length; j++) {
-                if (radios[j].checked) {
-                    respostas.push({
-                        idAlternativa: radios[j].value
-                    });
-                    break; // Só pode ter uma marcada por pergunta
-                }
+        for (let i = 0; i < inputs.length; i++) {
+            const input = inputs[i];
+            console.log("value do input", input.value);
+
+            if (input.checked) {
+                respostas.push({
+                    idAlternativa: Number(input.value)
+                });
             }
         }
+
+        console.log("selecionei a const respostas: ", respostas);
+
 
         fetch(`/quiz/responder/${idQuiz}`, {
             method: "POST",
