@@ -7,5 +7,8 @@ router.get("/listarQuizzes", function (req, res) {
     quizController.listarQuizzes(req, res);
 })
 
+router.get("/perguntas/:idQuiz", function (req, res) {
+    quizController.listarPerguntasAlternativas(req, res);
+})
 
 module.exports = router;
