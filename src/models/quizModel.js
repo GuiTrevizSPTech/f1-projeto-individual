@@ -29,7 +29,21 @@ function buscarQuizCompleto(idQuiz) {
     return database.executar(instrucaoSql);
 }
 
+function buscarRespostasCorretas(idQuiz) {
+    console.log("ACESSEI O QUIZ MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function buscarRespostasCorretas(): ", idQuiz)
+    var instrucaoSql = `
+        SELECT a.id, a.correto
+        FROM quiz q
+        JOIN pergunta p ON p.id_quiz = q.id
+        JOIN alternativa a ON a.fk_pergunta = p.id
+        WHERE q.id = ${idQuiz};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     listarQuizzes,
-    buscarQuizCompleto
+    buscarQuizCompleto,
+    buscarRespostasCorretas
 }

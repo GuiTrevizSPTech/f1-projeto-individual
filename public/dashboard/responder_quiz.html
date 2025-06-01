@@ -68,6 +68,48 @@
                 console.error("Erro ao carregar quiz:", error);
             });
     }
+
+    function enviarRespostas() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const idQuiz = urlParams.get("idQuiz");
+        const idUsuario = sessionStorage.ID_USUARIO;
+
+        const respostas = [];
+
+        // Percorre todas as divs de perguntas
+        const perguntas = document.querySelectorAll(".pergunta");
+        for (let i = 0; i < perguntas.length; i++) {
+            const perguntaDiv = perguntas[i];
+            const radios = perguntaDiv.querySelectorAll("input[type=radio]");
+
+            for (let j = 0; j < radios.length; j++) {
+                if (radios[j].checked) {
+                    respostas.push({
+                        idAlternativa: radios[j].value
+                    });
+                    break; // Só pode ter uma marcada por pergunta
+                }
+            }
+        }
+
+        fetch(`/quiz/responder/${idQuiz}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuario: idUsuario,
+                respostas: respostas
+            })
+        })
+            .then(res => res.json())
+            .then(resultado => {
+                alert(`Você acertou ${resultado.acertos} de ${resultado.total} perguntas! (${resultado.porcentagem}% de acerto)`);
+            })
+            .catch(erro => {
+                console.error("Erro ao enviar respostas:", erro);
+            });
+    }
 </script>
 
 </html>

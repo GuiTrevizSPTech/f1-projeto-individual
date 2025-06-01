@@ -11,4 +11,8 @@ router.get("/perguntas/:idQuiz", function (req, res) {
     quizController.listarPerguntasAlternativas(req, res);
 })
 
+router.post("/responder/:idQuiz", function (req, res) {
+    quizController.corrigirRespostaQuiz(req, res)
+})
+
 module.exports = router;
