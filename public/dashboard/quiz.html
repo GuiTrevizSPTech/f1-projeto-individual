@@ -48,8 +48,8 @@
             }
         })
             .then(res => res.json())
-            .then(quizzes => {
-                const container = document.getElementById("container-quizzes");
+            .then(quizzes => { // "lista" que vem da resposta do banco
+                const container = document.getElementById("container-quizzes"); // Referenciando a div pelo ID
                 container.innerHTML = "";
 
                 for (let i = 0; i < quizzes.length; i++) {
@@ -58,10 +58,12 @@
                     const card = document.createElement("div");
                     card.classList.add("quiz-card");
                     card.innerHTML = `
-                        <h3>${quiz.titulo}</h3>
-                        <button onclick="iniciarQuiz(${quiz.id})">Começar Quiz</button>
+                        <div>
+                            <h3>${quiz.titulo}</h3>
+                            <button onclick="iniciarQuiz(${quiz.id})">Começar Quiz</button>
+                        </div>
                     `;
-                    container.appendChild(card);
+                    container.appendChild(card); // Adicionando o que está sendo gerado no "for" dentro da div referenciada
                 }
             })
             .catch(err => {
@@ -70,7 +72,8 @@
     }
 
     function iniciarQuiz(idQuiz) {
-        window.location.href = `quiz_responder.html?idQuiz=${idQuiz}`;
+        // encodeURIComponent usado para funcionar corretamente com espaços e acentos na frase
+        window.location.href = `responder_quiz.html?idQuiz=${idQuiz}`;
     }
 </script>
 
