@@ -1,11 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title id="tituloPagina">TRZ | Quiz</title>
 </head>
-<body>
-    
+
+<body onload="carregarQuiz()">
+
+    <div class="formulario-completo">
+        <h1 id="tituloQuiz">Carregando quiz...</h1>
+
+        <div class="forms">
+            <form id="formQuiz">
+            </form>
+        </div>
+
+        <button onclick="enviarRespostas()">Enviar Respostas</button>
+    </div>
+
 </body>
+<script>
+    function carregarQuiz() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const idQuiz = urlParams.get("idQuiz");
+
+        fetch(`/quiz/perguntas/${idQuiz}`)
+            .then(res => res.json())
+            .then(dados => {
+                document.getElementById("tituloQuiz").innerText = dados.titulo;
+                document.getElementById("tituloPagina").innerText = `TRZ | ${dados.titulo}`;
+
+                const perguntas = dados.perguntas;
+                const form = document.getElementById("formQuiz");
+                form.innerHTML = "";
+
+                for (let i = 0; i < perguntas.length; i++) {
+                    const pergunta = perguntas[i];
+
+                    const divPergunta = document.createElement("div");
+                    divPergunta.className = "pergunta";
+
+                    const titulo = document.createElement("h3");
+                    titulo.innerText = pergunta.enunciado;
+                    divPergunta.appendChild(titulo);
+
+                    for (let j = 0; j < pergunta.alternativas.length; j++) {
+                        const alternativa = pergunta.alternativas[j];
+
+                        const label = document.createElement("label");
+                        const input = document.createElement("input");
+                        input.type = "radio";
+                        input.name = `pergunta_${pergunta.id}`;
+                        input.value = alternativa.id;
+
+                        label.appendChild(input);
+                        label.appendChild(document.createTextNode(" " + alternativa.texto));
+                        divPergunta.appendChild(label);
+                        divPergunta.appendChild(document.createElement("br"));
+                    }
+
+                    form.appendChild(divPergunta);
+                }
+            })
+            .catch(error => {
+                console.error("Erro ao carregar quiz:", error);
+            });
+    }
+</script>
+
 </html>

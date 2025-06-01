@@ -1,8 +1,7 @@
-const { buscarQuizCompleto } = require("../controllers/quizController");
 var database = require("../database/config")
 
 function listarQuizzes() {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarQuizzes(): ")
+    console.log("ACESSEI O QUIZ MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarQuizzes(): ")
     var instrucaoSql = `
         SELECT id, titulo from quiz;
     `;
@@ -11,7 +10,7 @@ function listarQuizzes() {
 }
 
 function buscarQuizCompleto(idQuiz) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function buscarQuizCompleto(): ", idQuiz)
+    console.log("ACESSEI O QUIZ MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function buscarQuizCompleto(): ", idQuiz)
     var instrucaoSql = `
         SELECT 
             q.id AS id_quiz,
