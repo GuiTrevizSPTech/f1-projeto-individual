@@ -11,7 +11,7 @@
     <title id="tituloDashboard">TRZ | Dashboard</title>
 </head>
 
-<body onload="obterDadosUsuario()">
+<body onload="carregarDashboard()">
     <div class="father-header">
         <div class="header">
             <div class="logo">
@@ -63,9 +63,15 @@
 
 </body>
 <script>
+    const idUsuario = sessionStorage.ID_USUARIO;
+
+    function carregarDashboard() {
+        obterDadosUsuario();
+        obterDadosAcertos();
+        obterDadosMedia();
+    }
 
     function obterDadosUsuario() {
-        const idUsuario = sessionStorage.ID_USUARIO;
 
         fetch("/dashboard/dadosKpi", {
             method: "POST",
@@ -88,50 +94,115 @@
             });
     }
 
+    function obterDadosAcertos() {
+        fetch('/dashboard/acertosPorQuiz', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ idUsuario: sessionStorage.ID_USUARIO })
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                plotarGraficoBarra(data);
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+    }
 
-    const ctx = document.getElementById('myChart');
+    function plotarGraficoBarra(dados) {
+        const quizzes = [];
+        const acertos = [];
 
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-
-            }
+        for (let i = 0; i < dados.length; i++) {
+            quizzes.push(dados[i].titulo_quiz);
+            acertos.push(dados[i].total_acertos);
         }
-    });
 
-    const ctx2 = document.getElementById('myChart2');
+        const ctx = document.getElementById('myChart');
 
-    new Chart(ctx2, {
-        type: 'pie',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: quizzes,
+                datasets: [{
+                    label: 'Total de Acertos por Quiz',
+                    data: acertos,
+                    backgroundColor: "rgba(210, 30, 30, 0.6)",
+                    borderColor: "rgba(255, 5, 1, 1)",
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+
                 }
-
             }
+        });
+    }
+
+    function obterDadosMedia() {
+        fetch('/dashboard/mediaPorQuiz', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ idUsuario: sessionStorage.ID_USUARIO })
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                plotarGraficoPizza(data);
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+    }
+
+    function plotarGraficoPizza(dados) {
+        const quizzes = [];
+        const media = [];
+
+        for (let i = 0; i < dados.length; i++) {
+            quizzes.push(dados[i].titulo_quiz);
+            media.push(dados[i].media_porcentagem);
         }
-    });
+
+        const ctx2 = document.getElementById('myChart2');
+
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: quizzes,
+                datasets: [{
+                    label: 'Média de Acertos dos Quizzes (%)',
+                    data: media,
+                    backgroundColor: [
+                        'rgba(255, 5, 1, 0.7)', 
+                        'rgba(255, 30, 30, 0.7)', 
+                        'rgba(240, 0, 50, 0.7)'    
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+
+                }
+            }
+        });
+    }
+
 </script>
 
 </html>

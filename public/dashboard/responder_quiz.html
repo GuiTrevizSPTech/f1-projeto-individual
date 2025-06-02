@@ -83,21 +83,16 @@
         const respostas = [];
 
         const inputs = document.querySelectorAll(".inputs-radio");
-        console.log("selecionei a const perguntas: ", inputs);
 
         for (let i = 0; i < inputs.length; i++) {
             const input = inputs[i];
-            console.log("value do input", input.value);
 
             if (input.checked) {
                 respostas.push({
-                    idAlternativa: Number(input.value)
+                    idAlternativa: Number(input.value)  
                 });
             }
         }
-
-        console.log("selecionei a const respostas: ", respostas);
-
 
         fetch(`/quiz/responder/${idQuiz}`, {
             method: "POST",

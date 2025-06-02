@@ -7,4 +7,12 @@ router.post("/dadosKpi", function (req, res) {
     dashboardController.dadosKpi(req, res);
 })
 
+router.post("/acertosPorQuiz", function (req, res) {
+    dashboardController.acertosPorQuiz(req, res);
+})
+
+router.post("/mediaPorQuiz", function (req, res) {
+    dashboardController.mediaPorQuiz(req, res);
+})
+
 module.exports = router;

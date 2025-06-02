@@ -15,6 +15,40 @@ function dadosKpi(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function acertosPorQuiz(idUsuario) {
+    console.log("ACESSEI O QUIZ MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function acertosPorQuiz(): ", idUsuario)
+    var instrucaoSql = `
+        SELECT 
+            q.titulo as titulo_quiz,
+            SUM(rq.acertos) as total_acertos
+        FROM resultado_quiz rq
+        JOIN quiz q ON rq.id_quiz = q.id
+        WHERE rq.id_usuario = ${idUsuario}
+        GROUP BY rq.id_quiz;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function mediaPorQuiz(idUsuario) {
+    console.log("ACESSEI O QUIZ MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function acertosPorQuiz(): ", idUsuario)
+    var instrucaoSql = `
+        SELECT
+        q.titulo as titulo_quiz,
+        truncate(SUM(rq.acertos) * 100 / sum(rq.total), 2) as media_porcentagem
+        FROM resultado_quiz rq
+        JOIN quiz q ON rq.id_quiz = q.id
+        WHERE rq.id_usuario = ${idUsuario}
+        GROUP BY rq.id_quiz;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+
+    
+}
+
 module.exports = {
-    dadosKpi
+    dadosKpi,
+    acertosPorQuiz,
+    mediaPorQuiz
 }
