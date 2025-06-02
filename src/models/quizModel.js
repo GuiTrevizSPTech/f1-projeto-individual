@@ -51,6 +51,7 @@ function salvarResultadoQuiz(idUsuario, idQuiz, acertos, total, porcentagem) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+
 module.exports = {
     listarQuizzes,
     buscarQuizCompleto,

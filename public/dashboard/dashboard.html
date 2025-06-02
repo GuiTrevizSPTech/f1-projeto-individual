@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="../styles/dashboards.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <title class=""></title>
+    <title id="tituloDashboard">TRZ | Dashboard</title>
 </head>
 
-<body onload="obterDados()">
+<body onload="obterDadosUsuario()">
     <div class="father-header">
         <div class="header">
             <div class="logo">
@@ -30,21 +30,23 @@
             </svg>
         </div>
         <div class="recepcao">
-
+            <h2 id="saudacao"></h2>
         </div>
     </div>
 
     <div class="dados">
         <div class="indicadores">
             <div class="kpi">
-                <h3> </h3>
-                <h4></h4>
+                <h3>Total de acertos</h3>
+                <h4 id="totalAcertos"></h4>
             </div>
             <div class="kpi">
-
+                <h3>Marca Favorita</h3>
+                <h4 id="marcaFavorita"></h4>
             </div>
             <div class="kpi">
-
+                <h3>Média de acertos</h3>
+                <h4 id="mediaAcertos"></h4>
             </div>
         </div>
         <div class="graficos">
@@ -61,6 +63,32 @@
 
 </body>
 <script>
+
+    function obterDadosUsuario() {
+        const idUsuario = sessionStorage.ID_USUARIO;
+
+        fetch("/dashboard/dadosKpi", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ idUsuario: idUsuario })
+        })
+            .then(res => res.json())
+            .then(dados => {
+                document.getElementById("marcaFavorita").innerText = dados.marca_favorita || "-";
+                document.getElementById("totalAcertos").innerText = dados.total_acertos || "0";
+                document.getElementById("mediaAcertos").innerText =
+                    dados.media_porcentagem_acertos
+                        ? Number(dados.media_porcentagem_acertos).toFixed(2) + "%"
+                        : "0.00%";
+            })
+            .catch(erro => {
+                console.error("Erro ao carregar KPIs:", erro);
+            });
+    }
+
+
     const ctx = document.getElementById('myChart');
 
     new Chart(ctx, {
@@ -105,4 +133,5 @@
         }
     });
 </script>
+
 </html>

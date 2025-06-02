@@ -26,7 +26,12 @@
         const urlParams = new URLSearchParams(window.location.search);
         const idQuiz = urlParams.get("idQuiz");
 
-        fetch(`/quiz/perguntas/${idQuiz}`)
+        fetch(`/quiz/perguntas/${idQuiz}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            } 
+        })
             .then(res => res.json())
             .then(dados => {
                 document.getElementById("tituloQuiz").innerText = dados.titulo;

@@ -15,4 +15,8 @@ router.post("/responder/:idQuiz", function (req, res) {
     quizController.corrigirRespostaQuiz(req, res)
 })
 
+router.post("/dadosKpi/", function (req, res) {
+    quizController.dadosKpi(req, res);
+})
+
 module.exports = router;

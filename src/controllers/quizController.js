@@ -71,8 +71,6 @@ function corrigirRespostaQuiz(req, res) {
         .then(respostasCertas => {
             let acertos = 0;
             let total = 0;
-            console.log("respostasCertas Model:", respostasCertas);
-
 
             // Contar total de alternativas corretas
             for (let i = 0; i < respostasCertas.length; i++) {
@@ -84,7 +82,7 @@ function corrigirRespostaQuiz(req, res) {
             // Comparar as respostas do usuário com as alternativas corretas
             for (let i = 0; i < respostasUsuario.length; i++) {
                 const respostaUsuario = respostasUsuario[i];
-                console.log("RespostasUsuario: ", respostaUsuario);
+    
                 for (let j = 0; j < respostasCertas.length; j++) {
                     const alternativaCorreta = respostasCertas[j];
 
@@ -93,7 +91,6 @@ function corrigirRespostaQuiz(req, res) {
                     if (Number(respostaUsuario.idAlternativa) === Number(alternativaCorreta.id) &&
                         Number(alternativaCorreta.correto) === 1
                     ) {
-                        console.log("ACERTOU a alternativa: ", respostaUsuario.idAlternativa);
                         acertos++;
                         break;
                     }
