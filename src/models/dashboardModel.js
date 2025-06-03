@@ -99,8 +99,8 @@ function marcaFavoritaUsuarios() {
     console.log("ACESSEI O QUIZ MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function marcaFavoritaUsuarios()")
     var instrucaoSql = `
         SELECT 
-            m.nome,
-            COUNT(*) AS total_usuarios
+            m.nome nome_marca,
+            COUNT(*) total_usuarios
         FROM usuario u
         JOIN marca m ON u.fk_marca_favorita = m.id
         GROUP BY m.id

@@ -81,7 +81,7 @@ function usuarioMaiorMedia(req, res) {
 
 function marcaFavoritaUsuarios(req, res) {
 
-    dashboardModel.usuarioMaiorMedia()
+    dashboardModel.marcaFavoritaUsuarios()
     .then(resposta => {
         res.status(200).json(resposta)
     })

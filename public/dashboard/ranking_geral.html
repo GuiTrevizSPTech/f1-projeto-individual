@@ -68,6 +68,7 @@
         carregarRanking();
         usuarioMaisAcertos();
         usuarioMaiorMedia();
+        marcaFavoritaUsuarios();
     }
 
     function carregarRanking() {
@@ -75,7 +76,7 @@
             .then(res => res.json())
             .then(dados => {
                 const corpoTabela = document.getElementById("corpoTabelaRanking");
-                corpoTabela.innerHTML = ""; // limpar antes de preencher
+                corpoTabela.innerHTML = "";
 
                 for (let i = 0; i < dados.length; i++) {
                     const usuario = dados[i];
@@ -146,9 +147,9 @@
             .then(res => res.json())
             .then(dados => {
                 if (dados.length > 0) {
-                    document.getElementById("usuarioMaiorMedia").innerText = dados[0].nome;
+                    document.getElementById("marcaFavoritaPublico").innerText = dados[0].nome_marca;
                 } else {
-                    document.getElementById("usuarioMaiorMedia").innerText = "-";
+                    document.getElementById("marcaFavoritaPublico").innerText = "-";
                 }
                 
             })
