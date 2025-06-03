@@ -67,6 +67,7 @@
     function carregarDados() {
         carregarRanking();
         usuarioMaisAcertos();
+        usuarioMaiorMedia();
     }
 
     function carregarRanking() {
@@ -110,7 +111,49 @@
                 
             })
             .catch(erro => {
-                console.error("Erro ao carregar KPIs:", erro);
+                console.error("Erro ao carregar usuario com mais acertos:", erro);
+            });
+    }
+
+    function usuarioMaiorMedia() {
+        fetch("/dashboard/usuarioMaiorMedia", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(dados => {
+                if (dados.length > 0) {
+                    document.getElementById("usuarioMaiorMedia").innerText = dados[0].nome;
+                } else {
+                    document.getElementById("usuarioMaiorMedia").innerText = "-";
+                }
+                
+            })
+            .catch(erro => {
+                console.error("Erro ao carregar usuario com mais acertos:", erro);
+            });
+    }
+
+    function marcaFavoritaUsuarios() {
+        fetch("/dashboard/marcaFavoritaUsuarios", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(dados => {
+                if (dados.length > 0) {
+                    document.getElementById("usuarioMaiorMedia").innerText = dados[0].nome;
+                } else {
+                    document.getElementById("usuarioMaiorMedia").innerText = "-";
+                }
+                
+            })
+            .catch(erro => {
+                console.error("Erro ao carregar usuario com mais acertos:", erro);
             });
     }
 </script>

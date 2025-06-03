@@ -67,10 +67,36 @@ function usuarioMaisAcertos(req, res) {
     })
 }
 
+function usuarioMaiorMedia(req, res) {
+
+    dashboardModel.usuarioMaiorMedia()
+    .then(resposta => {
+        res.status(200).json(resposta)
+    })
+    .catch(function (erro) {
+        console.log("#ERRO", erro);
+        res.status(401).send("Erro ao listar usuario!")
+    })
+}
+
+function marcaFavoritaUsuarios(req, res) {
+
+    dashboardModel.usuarioMaiorMedia()
+    .then(resposta => {
+        res.status(200).json(resposta)
+    })
+    .catch(function (erro) {
+        console.log("#ERRO", erro);
+        res.status(401).send("Erro ao listar usuario!")
+    })
+}
+
 module.exports = {
     dadosKpi,
     acertosPorQuiz,
     mediaPorQuiz,
     dadosRanking,
-    usuarioMaisAcertos
+    usuarioMaisAcertos,
+    usuarioMaiorMedia,
+    marcaFavoritaUsuarios
 };

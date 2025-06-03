@@ -23,6 +23,12 @@ router.get("/usuarioMaisAcertos", function (req, res) {
     dashboardController.usuarioMaisAcertos(req, res);
 })
 
+router.get("/usuarioMaiorMedia", function (req, res) {
+    dashboardController.usuarioMaiorMedia(req, res);
+})
 
+router.get("/marcaFavoritaUsuarios", function (req, res) {
+    dashboardController.marcaFavoritaUsuarios(req, res);
+})
 
 module.exports = router;

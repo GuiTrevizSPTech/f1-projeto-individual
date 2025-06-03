@@ -79,10 +79,45 @@ function usuarioMaisAcertos() {
     return database.executar(instrucaoSql);
 }
 
+function usuarioMaiorMedia() {
+    console.log("ACESSEI O QUIZ MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function usuarioMaiorMedia()")
+    var instrucaoSql = `
+        select
+            u.nome,
+            truncate(sum(rq.acertos) * 100 / sum(rq.total), 2) media_acertos 
+		from resultado_quiz rq
+        join usuario u on rq.id_usuario = u.id
+        group by u.id
+        order by media_acertos desc
+        limit 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function marcaFavoritaUsuarios() {
+    console.log("ACESSEI O QUIZ MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function marcaFavoritaUsuarios()")
+    var instrucaoSql = `
+        SELECT 
+            m.nome,
+            COUNT(*) AS total_usuarios
+        FROM usuario u
+        JOIN marca m ON u.fk_marca_favorita = m.id
+        GROUP BY m.id
+        ORDER BY total_usuarios DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+
+}
+
 module.exports = {
     dadosKpi,
     acertosPorQuiz,
     mediaPorQuiz,
     dadosRanking,
-    usuarioMaisAcertos
+    usuarioMaisAcertos,
+    usuarioMaiorMedia,
+    marcaFavoritaUsuarios
 }
