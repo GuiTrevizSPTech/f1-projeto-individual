@@ -19,4 +19,10 @@ router.get("/dadosRanking", function (req, res) {
     dashboardController.dadosRanking(req, res);
 })
 
+router.get("/usuarioMaisAcertos", function (req, res) {
+    dashboardController.usuarioMaisAcertos(req, res);
+})
+
+
+
 module.exports = router;

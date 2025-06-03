@@ -11,7 +11,7 @@
     <title class=""></title>
 </head>
 
-<body onload="carregarRanking()">
+<body onload="carregarDados()">
     <div class="header">
         <div class="logo">
             <h1>TRZ</h1>
@@ -32,16 +32,16 @@
     <div class="dados">
         <div class="indicadores">
             <div class="kpi">
-                <h3>Mais Acertos</h3>
-                <h4></h4>
+                <h3>Usuário com Mais Acertos</h3>
+                <h4 id="usuarioMaisAcertos"></h4>
             </div>
             <div class="kpi">
                 <h3>Marca Favorita do Público</h3>
-                <h4></h4>
+                <h4 id="marcaFavoritaPublico"></h4>
             </div>
             <div class="kpi">
-                <h3>Maior Média</h3>
-                <h4></h4>
+                <h3>Usuário com Maior Média</h3>
+                <h4 id="usuarioMaiorMedia"></h4>
             </div>
         </div>
     </div>
@@ -64,8 +64,13 @@
 </body>
 
 <script>
+    function carregarDados() {
+        carregarRanking();
+        usuarioMaisAcertos();
+    }
+
     function carregarRanking() {
-        fetch("/dashboard/dadosRanking") // ajuste a URL conforme sua rota real
+        fetch("/dashboard/dadosRanking")
             .then(res => res.json())
             .then(dados => {
                 const corpoTabela = document.getElementById("corpoTabelaRanking");
@@ -85,6 +90,27 @@
             })
             .catch(err => {
                 console.error("Erro ao carregar ranking:", err);
+            });
+    }
+
+    function usuarioMaisAcertos() {
+        fetch("/dashboard/usuarioMaisAcertos", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(dados => {
+                if (dados.length > 0) {
+                    document.getElementById("usuarioMaisAcertos").innerText = dados[0].nome;
+                } else {
+                    document.getElementById("usuarioMaisAcertos").innerText = "-";
+                }
+                
+            })
+            .catch(erro => {
+                console.error("Erro ao carregar KPIs:", erro);
             });
     }
 </script>

@@ -63,9 +63,26 @@ function dadosRanking() {
     return database.executar(instrucaoSql);
 }
 
+function usuarioMaisAcertos() {
+    console.log("ACESSEI O QUIZ MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function usuarioMaisAcertos()")
+    var instrucaoSql = `
+        select
+            u.nome,
+            sum(rq.acertos) total_acertos
+        from resultado_quiz rq
+        join usuario u on rq.id_usuario = u.id
+        group by u.id
+        order by total_acertos desc
+        limit 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     dadosKpi,
     acertosPorQuiz,
     mediaPorQuiz,
-    dadosRanking
+    dadosRanking,
+    usuarioMaisAcertos
 }

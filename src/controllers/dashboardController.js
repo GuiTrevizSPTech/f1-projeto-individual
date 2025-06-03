@@ -55,9 +55,22 @@ function dadosRanking(req, res) {
             })
 }
 
+function usuarioMaisAcertos(req, res) {
+
+    dashboardModel.usuarioMaisAcertos()
+    .then(resposta => {
+        res.status(200).json(resposta)
+    })
+    .catch(function (erro) {
+        console.log("#ERRO", erro);
+        res.status(401).send("Erro ao listar usuario!")
+    })
+}
+
 module.exports = {
     dadosKpi,
     acertosPorQuiz,
     mediaPorQuiz,
-    dadosRanking
+    dadosRanking,
+    usuarioMaisAcertos
 };
