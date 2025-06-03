@@ -15,4 +15,8 @@ router.post("/mediaPorQuiz", function (req, res) {
     dashboardController.mediaPorQuiz(req, res);
 })
 
+router.get("/dadosRanking", function (req, res) {
+    dashboardController.dadosRanking(req, res);
+})
+
 module.exports = router;

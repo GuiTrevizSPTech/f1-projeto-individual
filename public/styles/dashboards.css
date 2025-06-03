@@ -53,6 +53,14 @@
     gap: 16px;
 }
 
+.recepcao {
+    padding: 10px 0px;
+}
+
+#saudacao {
+    text-align: center;
+}
+
 /* KPIs */
 
 .indicadores {
@@ -63,10 +71,24 @@
 }
 
 .kpi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
     height: 12rem;
     width: 22rem;
     border-radius: 15px;
     background-color: rgb(228, 228, 228);
+}
+
+.kpi h3{
+    font-size: 20px;
+}
+
+.kpi h4{
+    font-size: 30px;
+    font-weight: 600;
 }
 
 /* GRÁFICOS */
@@ -80,7 +102,11 @@
     background-color: rgb(228, 228, 228);
     padding: 8px;
     border-radius: 15px;
-    width: 35vw;
+    width: 46vw;
+}
+
+.graphic2 {
+    width: 25vw;
 }
 
 /* QUIZ */
