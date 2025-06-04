@@ -52,3 +52,67 @@
 button:hover {
     transform: scale(1.1);
 }
+
+/* Responder quiz */
+
+/* Container geral do quiz */
+.formulario-completo {
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: #f2f2f2; /* cinza claro */
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Título do quiz */
+#tituloQuiz {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  border-bottom: 2px solid #b00000; /* vermelho escuro sutil */
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+/* Cada pergunta */
+.pergunta {
+  margin-bottom: 30px;
+}
+
+.pergunta h3 {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+/* Estilo dos inputs de radio + labels */
+label {
+  display: inline-block;
+  margin: 6px 0;
+  font-size: 16px;
+  color: #222;
+  cursor: pointer;
+}
+
+.inputs-radio {
+  margin-right: 8px;
+}
+
+/* Botão de envio */
+.formulario-completo button {
+  display: block;
+  margin: 0 auto;
+  background-color: #c50000;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-completo button:hover {
+  background-color: #a00000;
+}
