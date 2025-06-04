@@ -234,3 +234,8 @@ button {
   transition: background-color 0.3s;
 }
 
+
+.graficos div h2 {
+    padding-bottom: 12px;
+    text-align: center;
+}
