@@ -91,6 +91,19 @@ function marcaFavoritaUsuarios(req, res) {
     })
 }
 
+function marcaFavoritaDoUsuario(req, res) {
+    const idUsuario = req.body.idUsuario;
+
+    dashboardModel.marcaFavoritaDoUsuario(idUsuario)
+    .then(resposta => {
+        res.status(200).json(resposta)
+    })
+    .catch(function (erro) {
+        console.log("#ERRO", erro);
+        res.status(401).send("Erro ao listar marca favorita do usuario!")
+    })
+}
+
 module.exports = {
     dadosKpi,
     acertosPorQuiz,
@@ -98,5 +111,6 @@ module.exports = {
     dadosRanking,
     usuarioMaisAcertos,
     usuarioMaiorMedia,
-    marcaFavoritaUsuarios
+    marcaFavoritaUsuarios,
+    marcaFavoritaDoUsuario
 };

@@ -31,4 +31,8 @@ router.get("/marcaFavoritaUsuarios", function (req, res) {
     dashboardController.marcaFavoritaUsuarios(req, res);
 })
 
+router.post("/marcaFavoritaDoUsuario", function (req, res) {
+    dashboardController.marcaFavoritaDoUsuario(req, res);
+})
+
 module.exports = router;

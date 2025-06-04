@@ -67,15 +67,34 @@
     const idUsuario = sessionStorage.ID_USUARIO;
     const nomeUsuario = sessionStorage.NOME_USUARIO;
 
+
     function carregarDashboard() {
         obterDadosUsuario();
         obterDadosAcertos();
         obterDadosMedia();
         saudarUsuario();
+        obterMarcaFavoritaUsuario();
     }
 
     function saudarUsuario() {
         saudacao.innerText = `Seja Bem-vindo, ${nomeUsuario}!`;
+    }
+
+    function obterMarcaFavoritaUsuario() {
+        fetch("/dashboard/marcaFavoritaDoUsuario", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ idUsuario: idUsuario })
+        })
+            .then(res => res.json())
+            .then(dados => {
+                document.getElementById("marcaFavorita").innerText = dados[0].marca_favorita || "-";
+            })
+            .catch(erro => {
+                console.error("Erro ao carregar a marca favorita do usuário:", erro);
+            });
     }
 
     function obterDadosUsuario() {
@@ -89,8 +108,7 @@
         })
             .then(res => res.json())
             .then(dados => {
-                document.getElementById("marcaFavorita").innerText = dados.marca_favorita || "-";
-                document.getElementById("totalAcertos").innerText = dados.total_acertos || "0";
+                document.getElementById("totalAcertos").innerText = Number(dados.total_acertos) || "0";
                 document.getElementById("mediaAcertos").innerText =
                     dados.media_porcentagem_acertos
                         ? Number(dados.media_porcentagem_acertos).toFixed(2) + "%"
