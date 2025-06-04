@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Racing+Sans+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,12 +12,46 @@
 
 body,
 html {
-    font-family: sans-serif;
+    scroll-behavior: smooth;
+    font-family: "Overpass", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#historia, #timeline {
+    scroll-margin-top: 12vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Racing Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 20px;
+}
+
+a {
+   font-size: 20px; 
 }
 
 .container {
     margin: auto;
     width: 80%;
+}
+
+.f1 {
+    color: rgb(230, 0, 0);
 }
 
 header {
@@ -74,7 +110,6 @@ ul {
 ul li a {
     text-decoration: none;
     color: white;
-    font-size: 1.1rem;
     transition: color 0.1s ease-in-out;
 }
 
@@ -114,7 +149,7 @@ header ul li a:hover {
 
 .main {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0,0,0,0.75)), url('../assets/f1-ferrari-slogan.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../assets/f1-ferrari-slogan.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -130,7 +165,7 @@ header ul li a:hover {
 }
 
 .slogan h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     line-height: 1.4;
 }
 
@@ -152,6 +187,38 @@ header ul li a:hover {
     background-color: #f2f2f2;
     color: #111;
     padding: 2rem;
+}
+
+#historia {
+    display: flex;
+}
+
+#historia .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 48px;
+}
+
+#historia .container .texto-historia {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    background-color: #b30000;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.texto-historia p {
+    text-align: justify;
+    font-size: 22px;
+    color: white; 
+}
+
+#historia .container h2 {
+    font-size: 48px;
 }
 
 /* TESTE */
