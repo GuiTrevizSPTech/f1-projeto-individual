@@ -18,7 +18,7 @@ html {
     font-style: normal;
 }
 
-#historia, #timeline {
+#historia, #linha_do_tempo {
     scroll-margin-top: 12vh;
 }
 
@@ -217,20 +217,31 @@ header ul li a:hover {
     color: white; 
 }
 
-#historia .container h2 {
-    font-size: 48px;
-}
+
 
 /* TESTE */
 
 
-.timeline {
+.linha_do_tempo {
     padding: 60px 0;
     max-width: 900px;
     margin: auto;
 }
 
-.decade {
+#historia .container h2 {
+    font-size: 48px;
+}
+
+#linha_do_tempo .titulo-linha-do-tempo h2 {
+    text-align: center;
+    font-size: 48px;
+}
+
+.titulo-linha-do-tempo {
+    margin-bottom: 48px;
+}
+
+.decada {
     margin-bottom: 40px;
     background-color: #1c1c1c;
     padding: 50px;
@@ -242,11 +253,11 @@ header ul li a:hover {
 
 }
 
-.decade:hover {
+.decada:hover {
     transform: translateX(15px);
 }
 
-.decade h2 {
+.decada h2 {
     color: crimson;
 }
 
@@ -308,6 +319,14 @@ button:hover {
     line-height: 1;
 }
 
+.caracteristicas li {
+    font-size: 18px;
+}
+
+.curiosidades li {
+    font-size: 18px;
+}
+
 /* FOOTER */
 .footer {
     background-color: var(--primary-red-color);
@@ -316,6 +335,12 @@ button:hover {
 .frase-continuacao {
     padding: 32px 0;
     text-align: center;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.frase-continuacao:hover {
+    color: white;
+    transform: scale(1.2);
 }
 
 .conteudo-footer {
