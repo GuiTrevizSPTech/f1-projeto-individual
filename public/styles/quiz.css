@@ -1,56 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Racing+Sans+One&display=swap');
+
+body {
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Racing Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .recepcao-quizzes {
-    padding: 24px 0;
+  padding: 24px 0;
 }
 
 .recepcao-quizzes h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .quiz-lista {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
 }
 
 .quiz-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10rem;
-    width: 36rem;
-    padding: 24px 48px;
-    border-radius: 10px;
-    background-color: rgb(199, 199, 199);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  width: 36rem;
+  padding: 24px 48px;
+  border-radius: 10px;
+  background-color: rgb(199, 199, 199);
 }
 
 .quiz-card div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 .quiz-card div h3 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .quiz-card div button {
-    font-size: 16px;
-    color: white;
-    border-style: none;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 24px;
-    background-color: rgb(197, 0, 0);
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+  font-size: 16px;
+  color: white;
+  border-style: none;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  background-color: rgb(197, 0, 0);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
 
 button:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Responder quiz */
@@ -59,7 +78,8 @@ button:hover {
 .formulario-completo {
   max-width: 700px;
   margin: 40px auto;
-  background-color: #f2f2f2; /* cinza claro */
+  background-color: #f2f2f2;
+  /* cinza claro */
   padding: 30px 40px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -70,7 +90,8 @@ button:hover {
   text-align: center;
   font-size: 24px;
   color: #333;
-  border-bottom: 2px solid #b00000; /* vermelho escuro sutil */
+  border-bottom: 2px solid #b00000;
+  /* vermelho escuro sutil */
   padding-bottom: 10px;
   margin-bottom: 30px;
 }
