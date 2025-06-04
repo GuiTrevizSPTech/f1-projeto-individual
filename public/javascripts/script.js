@@ -14,3 +14,11 @@ function mostrarDetalhes(btn) {
     divDetalhe.classList.toggle("hidden");
     btn.textContent = divDetalhe.classList.contains("hidden") ? "Ver mais" : "Ver menos";
 }
+
+function sair() {
+    // Remove todos os dados armazenados na sessão
+    sessionStorage.clear();
+
+    // Redireciona o usuário para a página de login
+    window.location.href = "../index.html";
+}
