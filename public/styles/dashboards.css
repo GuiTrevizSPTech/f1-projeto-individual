@@ -185,3 +185,52 @@ button {
 .text-new-gray {
     color: var(--new-gray);
 }
+
+/* Ranking Geral */
+
+/* Estilo para o container da tabela */
+.ranking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+}
+
+/* Estilo do título */
+.ranking h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Estilo da tabela */
+#tabelaRanking {
+  width: 80%;
+  background-color: #f2f2f2; /* cinza claro */
+  border-collapse: collapse;
+  font-size: 18px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Células */
+#tabelaRanking th,
+#tabelaRanking td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Cabeçalho em negrito e com leve destaque */
+#tabelaRanking thead th {
+  font-weight: bold;
+  background-color: #e6e6e6;
+}
+
+/* Efeito ao passar o mouse */
+#tabelaRanking tbody tr:hover {
+  background-color: #e0e0e0;
+  transition: background-color 0.3s;
+}
+
